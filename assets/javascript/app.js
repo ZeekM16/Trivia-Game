@@ -14,33 +14,18 @@ var scoreDiv = $("scoreContainer");
 
 var questions = [
     {
-          prompt: "What color are apples?\n(a) Red/Green\n\ (b) Purple\n(c) Orange",
+          prompt: "Who was the butler on 'The Fresh Prince of Bel Air'? \n(a) Geoffrey\n\ (b) Bertram\n(c) Carlton",
           answer: "a"
     },
     {
-         prompt: "What color are Bananas?\n(a) Teal\n\ (b) Magenta\n(c) Yellow",
+         prompt: "Which candy was the freshmaker?\n(a) Tic Tacs\n\ (b) Nerds\n(c) Mentos",
          answer: "c"
     },
     {
-         prompt: "What color are strawberries?\n(a) Yellow\n\ (b) Red\n(c) Blue",
+         prompt: "What's the first book in R.L. Stine's Goosebumps series?\n(a) Welcome to The Dead House\n\ (b) Say Cheese and Die!\n(c) The Girl Who Cried Monster",
          answer: "a"
     }
 ];
-var score = 0;
-
-for(var i = 0; i < questions.length; i++){
-    var response = window.prompt(questions[i].prompt);
-    if(response == questions[i].answer){
-         score++;
-         alert("Correct!");
-    } else {
-         alert("WRONG!");
-    }
-}
-alert("you got " + score + "/" + questions.length);
-
-
-
 
 var lastQuestion = questions.length - 1;
 var runningQuestion = 0;
@@ -94,14 +79,14 @@ function renderCounter(){
             runningQuestion++;
             renderQuestion();
         }else{
-            // shows the score at the end of the quiz
+           
             clearInterval(TIMER);
             scoreRender();
         }
     }
 }
 
-// checkAnwer
+// check Anwers
 
 function checkAnswer(answer){
     if( answer == questions[runningQuestion].correct){
